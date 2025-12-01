@@ -12881,10 +12881,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#preliminaries" class="md-nav__link">
+  <a href="#simulator_compatibility_test-package" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preliminaries
+        simulator_compatibility_test package
       
     </span>
   </a>
@@ -12978,15 +12978,27 @@
 
 
 <div><h1 id="compatibility-test">Compatibility test<a class="headerlink" href="#compatibility-test" title="Permanent link">#</a></h1>
-<p>Compatibility testing tool is to check whether the digital twin simulator is compatible to Autoware or not.</p>
-<h2 id="preliminaries">Preliminaries<a class="headerlink" href="#preliminaries" title="Permanent link">#</a></h2>
-<p>The following compatibility testing tool is based on ROS2 humple.</p>
-<p>As Jan 26th 2023, it is only tested with <a href="https://autowarefoundation.github.io/autoware-documentation/main/tutorials/ad-hoc-simulation/digital-twin-simulation/MORAI_Sim-tutorial/">MORAI Sim: Drive</a></p>
-<p>cd ~/${autoware installed directory}
-source /opt/ros/humble/setup.bash
-source install/setup.bash</p>
-<p>cd ~/${autoware installed directory}/src/universe/autoware.universe/tools/simulator_test/simulator_compatibility_test/test_sim_common_manual_testing/
-python3 -m pytest .</p>
+<p>The compatibility test tool is used to verify whether a digital-twin simulator works correctly with Autoware.</p>
+<h2 id="simulator_compatibility_test-package"><code>simulator_compatibility_test</code> package<a class="headerlink" href="#simulator_compatibility_test-package" title="Permanent link">#</a></h2>
+<ul>
+<li>This tool is built on <strong><abbr title="Robot Operating System">ROS</abbr> 2 Humble</strong>.</li>
+<li>As of <strong>Jan 26th, 2023</strong>, it has been tested only with <a href="../MORAI_Sim-tutorial/"><strong>MORAI SIM: Drive Demo</strong></a>.</li>
+<li>For full source code and instructions, see:
+  <a href="https://github.com/autowarefoundation/autoware_tools/tree/main/simulator/simulator_compatibility_test#simulator_compatibility_test">autoware_tools/simulator/simulator_compatibility_test</a></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The test suite includes a set of manual and automated test cases that check whether a simulator correctly publishes and receives the Autoware-required messages (e.g., control mode, gear, velocity, steering, turn indicators, hazard lights).
+These tests verify bidirectional communication by sending control commands and checking the simulator’s reported status.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Simulators other than MORAI SIM can also use the <strong>common manual tests</strong> (<code>test_sim_common_manual_testing</code>).</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Developers may extend these by creating simulator-specific automated versions similar to the MORAI SIM test set.</p>
+</div>
 <!-- prettier-ignore --></div>
 
 
